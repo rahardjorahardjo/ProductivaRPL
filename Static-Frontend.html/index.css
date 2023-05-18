@@ -1,0 +1,44 @@
+.walkingpic{
+    position: absolute;
+    left: 1.93%;
+    right: 84.58%;
+    top: 62%;
+    bottom: 0%;
+
+}
+.navbarColor{
+    position: absolute;width: 267px;height: 745px;left: 0px;top: 0px;background: #FFBF9B;box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 5px;
+}
+.background{
+    position: fixed;width: 1537px;height: 765px;left: 20px;top: -10px;
+}
+.navbarUnit1{
+    position: absolute;width: 112.87px;height: 112.87px;left: 78.45px;top: 60.04px;border-radius: 50%;background: #B46060;
+}
+.nameHi{
+    position: absolute; width: 136.89px;height: 36.14px;left: 69.65px;top: 192.93px;font-family: 'Inter';font-style: normal;font-weight: 700;font-size: 26.6515px;line-height: 32px;color: #FFF4E0;
+}
+.navbarUnit2{
+    position: absolute;width: 174.51px;height: 43.23px;left: 48.03px;top: 256.17px;background: #B46060;box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);border-radius: 23px;
+}
+.unit2Desc{
+    position: absolute;width: 57px;height: 23px;left: 108px;top: 266px;font-family: 'Inter';font-style: normal;font-weight: 500;font-size: 19.2125px;line-height: 23px;color: #FFF4E0;
+}
+.navbarUnit3{
+    position: absolute;width: 174.51px;height: 43.23px;left: 48.03px;top: 336.22px;background: rgba(180, 96, 96, 0.5);box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);border-radius: 21.6141px;
+}
+.unit3Desc{
+    position: absolute;width: 98.46px;height: 24.02px;left: 86.46px;top: 345.83px;font-family: 'Inter';font-style: normal;font-weight: 500;font-size: 19.2125p;line-height: 23px;text-align: center;color: #FFF4E0;
+}
+.navbarUnit4{
+    position: absolute;width: 174.51px;height: 43.23px;left: 48.03px;top: 416.27px;background: #B46060;box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);border-radius: 21.6141px;
+}
+.unit4Desc{
+    position: absolute;width: 89.66px; height: 21.9px;left: 93.66px;top: 426.68px;font-family: 'Inter';font-style: normal;font-weight: 500;font-size: 19.2125px;line-height: 23px;color: #FFF4E0;
+}
+.navbarUnit5{
+    position: absolute;width: 140.89px;height: 29.62px;left: 65.64px;top: 499.53px;background: #4D4D4D;box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);border-radius: 8.00521px;
+}
+.unit5Desc{
+    position: absolute;width: 83.25px;height: 33.62px;left: 120.08px;top: 504.33px;font-family: 'Inter';font-style: normal;font-weight: 600;font-size: 16.0104px;line-height: 19px;color: #FFF4E0;
+}
