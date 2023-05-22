@@ -8,6 +8,25 @@ if (!isset($_SESSION["login"])) {
 
 include 'config.php';
 
+//ambil user id
+$user_id = $_SESSION['user']['user_id'];
+
+//ambil data notes
+$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'");
+$notes = mysqli_fetch_assoc($query);
+if(mysqli_num_rows($query) < 1){
+    $note_title = "Notes";
+    $note = "Notes";
+} else {
+    $note_title = $notes['note_title'];
+    $note = $notes['note'];
+
+}
+
+if( isset($_POST['editNote']) ){
+    header("Location: editNote.php");
+}
+
 ?>
 
 
@@ -23,12 +42,16 @@ include 'config.php';
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Test</h1>
-    </div>
     <div class="container datetime">
         <div class="date">Date</div>
         <div class="time">Time</div>
+    </div>
+    <div class="container p-3">
+        <form action="" method="post">
+        <input type="text" name="title" value="<?= $note_title ?>" disabled>
+        <input type="text" name="notes" value="<?= $note ?>" disabled>
+        <button type="submit" name="editNote">Edit Note</button>
+        </form>
     </div>
     <div class="container">
         <a href="signout.php">logout</a>
