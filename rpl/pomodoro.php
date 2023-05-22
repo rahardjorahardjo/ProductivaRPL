@@ -22,9 +22,13 @@ include 'config.php';
     <title>Document</title>
 </head>
 <body>
-<div>
+<div class="pomodoro">
+    <div>
+        <span class="study">Study Time!</span>
+        <span class="break hide">Break Time!</span>
+    </div>
     <div id="timer" >
-        <span class="minutes">00</span>
+        <span class="minutes">25</span>
         <span>:</span>
         <span class="seconds">00</span>
     </div>
@@ -35,6 +39,9 @@ include 'config.php';
         <button class="p-3 increase" onclick="increase()">Increase</button>
         <button class="p-3 decrease" onclick="decrease()">Decrease</button>
     </div>
+</div>
+<div class="notes">
+    
 </div>
 <script type="text/javascript" src="js/pomodoro/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

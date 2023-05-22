@@ -5,9 +5,12 @@ const buttonPause = document.querySelector(".pause");
 const buttonStop = document.querySelector(".stop");
 const buttonIncrease = document.querySelector(".increase");
 const buttonDecrease = document.querySelector(".decrease");
+const studyTime = document.querySelector(".study");
+const breakTime = document.querySelector(".break");
 
 let timerTimeOut;
 let minutes = Number(minutesDisplay.textContent);
+let counter = 0;
 
 function updateDisplay(newMinutes, seconds) {
   console.log(newMinutes);
@@ -34,8 +37,20 @@ function setMinutes(type) {
 }
 
 function reset() {
-  updateDisplay(minutes, 0);
-  clearTimeout(timerTimeOut); // esta funçao para a execuçao do setTimeout
+  if (counter % 2 == 0) {
+    studyTime.classList.add("hide");
+    breakTime.classList.remove("hide");
+    updateDisplay(5, 0);
+    counter++;
+  } else if (counter % 2 == 1) {
+    studyTime.classList.remove("hide");
+    breakTime.classList.add("hide");
+    updateDisplay(25, 0);
+    counter++;
+  }
+  clearTimeout(timerTimeOut);
+  buttonPlay.classList.remove("hide");
+  buttonPause.classList.add("hide");
 }
 
 function countDown() {
@@ -47,9 +62,7 @@ function countDown() {
     updateDisplay(minutes, 0); //seta segundos começando com zero, pois a regra já cai no if
 
     if (isFinished) {
-      resetControls();
-      updateDisplay();
-      Sounds().timeEnd();
+      reset();
       return;
     }
 
@@ -84,17 +97,16 @@ function decrease() {
 function start() {
   buttonPlay.classList.add("hide");
   buttonPause.classList.remove("hide");
-  countDown()
+  countDown();
 }
 
 function pause() {
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");
-  hold()
+  hold();
 }
 
 function stop() {
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");
-  reset()
 }
