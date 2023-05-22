@@ -42,6 +42,11 @@ if( isset($_POST['editNote']) ){
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <a href="signout.php">logout</a>
+        <a href="todo.php">todolist</a>
+        <a href="pomodoro.php">pomodoro</a>
+    </div>
     <div class="container datetime">
         <div class="date">Date</div>
         <div class="time">Time</div>
@@ -53,11 +58,7 @@ if( isset($_POST['editNote']) ){
         <button type="submit" name="editNote">Edit Note</button>
         </form>
     </div>
-    <div class="container">
-        <a href="signout.php">logout</a>
-        <a href="todo.php">todolist</a>
-        <a href="pomodoro.php">pomodoro</a>
-    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
