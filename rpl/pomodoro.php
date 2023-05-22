@@ -29,14 +29,14 @@ include 'config.php';
         <span class="seconds">00</span>
     </div>
     <div id="controls">
-        <button class="p-3 play">Start</button>
-        <button class="p-3 pause hide">Pause</button>
-        <button class="p-3 stop">Stop</button>
-        <button class="p-3 increase">Increase</button>
-        <button class="p-3 decrease">Decrease</button>
+        <button class="p-3 play" onclick="start()">Start</button>
+        <button class="p-3 pause hide" onclick="pause()">Pause</button>
+        <button class="p-3 stop" onclick="stop()">Stop</button>
+        <button class="p-3 increase" onclick="increase()">Increase</button>
+        <button class="p-3 decrease" onclick="decrease()">Decrease</button>
     </div>
 </div>
-<script type="module/javascript" src="js/pomodoro/pomodoro.js"></script>
+<script type="text/javascript" src="js/pomodoro/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
