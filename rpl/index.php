@@ -23,10 +23,6 @@ if(mysqli_num_rows($query) < 1){
 
 }
 
-if( isset($_POST['editNote']) ){
-    header("Location: editNote.php");
-}
-
 ?>
 
 
@@ -55,7 +51,6 @@ if( isset($_POST['editNote']) ){
         <form action="" method="post">
         <input type="text" name="title" value="<?= $note_title ?>" disabled>
         <input type="text" name="notes" value="<?= $note ?>" disabled>
-        <button type="submit" name="editNote">Edit Note</button>
         </form>
     </div>
     

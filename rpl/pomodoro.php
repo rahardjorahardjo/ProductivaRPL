@@ -40,9 +40,34 @@ include 'config.php';
         <button class="p-3 decrease" onclick="decrease()">Decrease</button>
     </div>
 </div>
-<div class="notes">
-    
-</div>
+<div class="pt-5 notes">
+    <div class="addNote">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal" >Add Note</button>
+        <div class="modal" id="noteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add New Note</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="addNote.php" method="post">
+                            <label for="noteTitle">New Title</label>
+                            <input type="text" class="noteTitle" name="noteTitle">
+                            <label for="note">New Note</label>
+                            <input type="text" class="note" name="note">
+                            <button class="btn btn-secondary">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="noteDisplay">
+        
+    </div>
 <script type="text/javascript" src="js/pomodoro/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
