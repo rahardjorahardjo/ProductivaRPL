@@ -27,55 +27,21 @@ $user_id = $_SESSION['user']['user_id'];
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@800&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <nav>
-      <ul>
-        <li>
-          <a href="#" class="logo">
-            <img src="units/logo.png" alt="">
-            <span class="nav-item">pomodoro</span>
-          </a>
-        </li>
-        <li><a href="#">
-          <i class="fas fa-home"></i>
-          <span class="nav-home">home</span>
-        </a></li>
-          
-        <li><a href="#">
-          <i class="fas fa-user"></i>
-          <span class="nav-user">Profile</span>
-        </a></li>
-        <li><a href="#">
-          <i class="fas fa-user"></i>
-          <span class="nav-user">Profile</span>
-        </a></li>
-        <li><a href="#">
-          <i class="fas fa-user"></i>
-          <span class="nav-user">Profile</span>
-        </a></li>
-        <li><a href="#" class="logout">
-          <i class="fas fa-user"></i>
-          <span class="nav-user">Profile</span>
-        </a></li>
-
-      </ul>
-    </nav> -->
-    
-
     <div class="backgrounds">
       <img src="units/background.svg" alt="" srcset="">
     </div>
     <div class="timerBox">
         <div class="pomodoro">
-          <div>
-              <span class="study">Study Time!</span>
+          <div class="Prompt">
+              <h1 class="study">Study Time!</h1>
               <span class="break hide">Break Time!</span>
           </div>
-          <div id="timer" >
+          <div class="PomodoroTimes" id="timer" >
               <span class="minutes">25</span>
               <span>:</span>
               <span class="seconds">00</span>
           </div>
-          <div id="controls">
+          <div class="Controla"id="controls">
               <button class="p-3 play" onclick="start()">Start</button>
               <button class="p-3 pause hide" onclick="pause()">Pause</button>
               <button class="p-3 stop" onclick="stop()">Stop</button>
@@ -84,18 +50,28 @@ $user_id = $_SESSION['user']['user_id'];
           </div>
       </div>
     </div>
-    <h2 class="timerClock">10:11</h2>
+
     <a href="" class="spotifyBox">
       <!-- <h2 class="spotifyTexts">Connect to Spotify</h2>
       <img src="" alt="" srcset=""> -->
     </a>
     <div class="taskBox">
+      <div class="notesHead" style="font-weight: 500;
+    font-size: 35px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    color: #FFF4E0;   
+    text-decoration: none;">Your Notes</div>
     <div class="container p-3">
     <div class="noteDisplay">
         <?php $query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'") ?>
         <?php mysqli_data_seek($query, 0) ?>
         <?php while($note = mysqli_fetch_assoc($query)): ?>
-            <div class="noteTitle"><a><?= $note['note_title'] ?></a></div>
+            <div class="noteWrap"><a href="#" class="notetitle"><?= $note['note_title'] ?></a></div>
         <?php endwhile; ?>
     </div>
     </div>
