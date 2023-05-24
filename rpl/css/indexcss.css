@@ -1,0 +1,312 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+} */
+/* body{
+    background: white;
+}
+nav{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #FFBF9B;
+    width: 120px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px black;
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    transition: all 0.5s ease;
+}
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.logo span{
+    font-weight: bold;
+    padding: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    color: black;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+a:hover{
+    background: white;
+}
+nav:hover{
+    width: 200px;
+    transition: all 0.5s ease;
+}
+.logout{
+    position: fixed;
+    bottom: 0px;
+} */
+*{
+    font-family: 'Inter';
+    font-style: normal;
+}
+.navbar{
+    box-sizing: border-box;
+
+position: fixed;
+width: 280px;
+height: 1263px;
+left: -11px;
+top: -69px;
+
+background: #FFBF9B;
+box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+}
+
+.profile{
+    position: fixed;
+width: 112.87px;
+height: 112.87px;
+left: 78.45px;
+top: 60.04px;
+
+background: #B46060;
+border-radius: 50%;
+}
+
+.navbartitle{
+    position: fixed;
+width: 136.89px;
+height: 36.14px;
+left: 69.65px;
+top: 192.93px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 26.6515px;
+line-height: 32px;
+
+color: #FFF4E0;
+
+}
+
+
+.homebutton{
+    position: fixed;
+    width: 174.51px;
+    height: 43.23px;
+    left: 48.03px;
+    top: 256.17px;
+
+    background: #B46060;
+    box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+    border-radius: 21.6141px;
+    text-decoration: none;
+}
+
+.homebuttondesc{
+    font-weight: 500;
+    font-size: 19.2125px;
+    line-height: 23px;
+    /* identical to box height */
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    color: #FFF4E0;
+
+}
+
+.pomodorobutton{
+    position: fixed;
+    width: 174.51px;
+    height: 43.23px;
+    left: 48.03px;
+    top: 336.22px;
+
+    background: rgba(180, 96, 96, 0.5);
+    box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+    border-radius: 21.6141px;
+    text-decoration: none;
+}
+
+.pomodorobuttondesc{
+    font-weight: 500;
+    font-size: 19.2125px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 0px;
+
+    margin-bottom: 0px;
+    padding-top: 10px;
+    color: #FFF4E0;   
+}
+
+.task-listbutton{
+    position: fixed;
+    width: 174.51px;
+    height: 43.23px;
+    left: 48.03px;
+    top: 416.27px;
+
+    background: rgba(180, 96, 96, 0.5);
+    box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+    border-radius: 21.6141px;
+    text-decoration: none;
+}
+.task-listdesc{
+    font-weight: 500;
+    font-size: 19.2125px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 0px;
+
+    margin-bottom: 0px;
+    padding-top: 10px;
+    color: #FFF4E0;   
+}
+
+.logoutbuttondesc{
+    position: fixed;
+width: 140.89px;
+height: 29.62px;
+left: 65.64px;
+top: 499.53px;
+
+background: #4D4D4D;
+box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+border-radius: 8.00521px;
+text-decoration: none;
+}
+
+.logoutbuttondesc{
+    font-weight: 500;
+    font-size: 19.2125px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 0px;
+
+    margin-bottom: 0px;
+    padding-top: 5px;
+    color: #FFF4E0;   
+}
+.navbarimg{
+    position: fixed;
+    height: 3000px;
+    width: 270.30706787109375px;
+    left: 29.633056640625px;
+    top: 462px;
+    border-radius: 0px;
+}
+
+.timerBox{
+    position: absolute;
+    width: 589.18px;
+    height: 564.37px;
+    left: 375.44px;
+    top: 40px;
+    
+    background: #B46060;
+    box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+    border-radius: 20.8135px;
+}
+.spotifyBox{
+    position: absolute;
+width: 1052.68px;
+height: 76.85px;
+left: 375.44px;
+top: 635px;
+
+background: #262626;
+box-shadow: 6.40417px 6.40417px 4.0026px rgba(0, 0, 0, 0.25);
+border-radius: 31.2203px;
+}
+.backgrounds{
+    position: fixed;
+width: 1269.63px;
+height: 864.56px;
+left: 267.37px;
+top: 0px;
+}
+.spotifyTexts{
+    position: absolute;
+width: 469.64px;
+height: 76.85px;
+left: 655.63px;
+top: 714.06px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32.0208px;
+line-height: 39px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.timerClock{
+    position: absolute;
+    width: 237.64px;
+    height: 47.03px;
+    left: 551.56px;
+    top: 465.92px;
+    font-family: 'Gill Sans MT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40.026px;
+    line-height: 46px;
+    text-align: center;
+    color: #FFF4E0;
+}
+.taskBox{
+    position: absolute;
+width: 426.68px;
+height: 320.21px;
+left: 997.45px;
+top: 40px;
+
+background: #FFBF9B;
+box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+border-radius: 8.00521px;
+}
+.taskAdd{
+    position: absolute;
+    width: 426.68px;
+    height: 210.54px;
+    left: 997.45px;
+    top: 390px;
+
+    background: #FFBF9B;
+    box-shadow: 0px 3.20208px 3.20208px rgba(0, 0, 0, 0.25);
+    border-radius: 8.00521px;
+}

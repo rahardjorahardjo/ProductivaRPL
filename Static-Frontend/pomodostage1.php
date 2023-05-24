@@ -1,3 +1,30 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
+include 'config.php';
+
+//ambil user id
+$user_id = $_SESSION['user']['user_id'];
+
+//ambil data notes
+$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'");
+$notes = mysqli_fetch_assoc($query);
+if(mysqli_num_rows($query) < 1){
+    $note_title = "Notes";
+    $note = "Notes";
+} else {
+    $note_title = $notes['note_title'];
+    $note = $notes['note'];
+
+}
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,14 +71,26 @@
     </nav> -->
     
 
-      <div class="backgrounds">
-        <img src="units/background.svg" alt="" srcset="">
-      </div>
-      <div class="timerBox">
+    <div class="backgrounds">
+      <img src="units/background.svg" alt="" srcset="">
+    </div>
+    <div class="timerBox">
+    </div>
+    <h2 class="timerClock">10:11</h2>
+    <a href="" class="spotifyBox">
+      <!-- <h2 class="spotifyTexts">Connect to Spotify</h2>
+      <img src="" alt="" srcset=""> -->
+    </a>
+    <div class="taskBox">
 
-      </div>
-
-      
+    </div>
+    <div class="taskAdd">
+    <div class="container datetime">
+        <div class="date">Date</div>
+        <div class="time">Time</div>
+    </div>
+    </div>
+    
     <div class="navbar">
         <div class="navbarimg">
           <img src="units/walking.png" alt="">
@@ -63,15 +102,15 @@
           <h2 class="homebuttondesc">Home</h2>
         </a>
     
-        <a href="Pomodoro.html" class="pomodorobutton">
+        <a href="pomodoro.php" class="pomodorobutton">
           <h2 class="pomodorobuttondesc">Pomodoro</h2>
         </a>
     
-        <a href="Task-list.html" class="task-listbutton">
+        <a href="todo.php" class="task-listbutton">
           <h2 class="task-listdesc">Task-list</h2>
         </a>
     
-        <a href="#" class="logoutbuttons">
+        <a href="signout.php" class="logoutbuttons">
           <h2 class="logoutbuttondesc">Logout</h2>
         </a>
       </div>
