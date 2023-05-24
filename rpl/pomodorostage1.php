@@ -22,6 +22,7 @@ $user_id = $_SESSION['user']['user_id'];
     <title>Pomodoro</title>
     <link rel="stylesheet" href="css/indexcss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@800&family=Zen+Kaku+Gothic+New:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -94,14 +95,24 @@ $user_id = $_SESSION['user']['user_id'];
         <?php $query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'") ?>
         <?php mysqli_data_seek($query, 0) ?>
         <?php while($note = mysqli_fetch_assoc($query)): ?>
-            <div class="noteTitle"><h2><?= $note['note_title'] ?></h2></div>
-            <div class="note"><p><?= $note['note'] ?></p></div>
+            <div class="noteTitle"><a><?= $note['note_title'] ?></a></div>
         <?php endwhile; ?>
     </div>
     </div>
     </div>
     <div class="taskAdd">
-    <div class="modal-body">
+    <div class="addNote">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal" >Add Note</button>
+        <div class="modal" id="noteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add New Note</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
                         <form action="addNote.php" method="post">
                             <label for="noteTitle">New Title</label>
                             <input type="text" class="noteTitle" name="noteTitle">
@@ -110,6 +121,10 @@ $user_id = $_SESSION['user']['user_id'];
                             <button class="btn btn-secondary">Add</button>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     
     <div class="navbar">
@@ -135,5 +150,8 @@ $user_id = $_SESSION['user']['user_id'];
           <h2 class="logoutbuttondesc">Logout</h2>
         </a>
       </div>
+      <script type="text/javascript" src="js/pomodoro/test.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     </body>
 </html>
