@@ -8,6 +8,9 @@ if (!isset($_SESSION["login"])) {
 
 include 'config.php';
 
+//ambil data user
+$user_id = $_SESSION['user']['user_id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +69,12 @@ include 'config.php';
         </div>
     </div>
     <div class="noteDisplay">
-        
+        <?php $query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'") ?>
+        <?php mysqli_data_seek($query, 0) ?>
+        <?php while($note = mysqli_fetch_assoc($query)): ?>
+            <div class="noteTitle"><h2><?= $note['note_title'] ?></h2></div>
+            <div class="note"><p><?= $note['note'] ?></p></div>
+        <?php endwhile; ?>
     </div>
 <script type="text/javascript" src="js/pomodoro/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
