@@ -42,7 +42,7 @@ mysqli_data_seek($query, 0)
     <div id="controls">
         <button class="play" onclick="start()">Start</button>
         <button class="pause hide" onclick="pause()">Pause</button>
-        <button class="stop" onclick="stop()">Stop</button>
+        <button class="stop" onclick="stopTime()">Stop</button>
         <button class="increase" onclick="increase()">Increase</button>
         <button class="decrease" onclick="decrease()">Decrease</button>
     </div>
@@ -77,16 +77,16 @@ mysqli_data_seek($query, 0)
         </div>
     </div>
     <div>
-        <?php while($note = mysqli_fetch_assoc($query)): ?>
+        <?php while ($note = mysqli_fetch_assoc($query)): ?>
             <div class="mb-2 card" style="width: 24rem;">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $note['note_title'] ?></h5>
-                    <p class="card-text"><?= $note['note'] ?></p>
-                    <a class="btn btn-primary" href="editNote.php?note_id=<?= $note['note_id'] ?>">Edit note</a>
-                    <a class="btn btn-primary" href="deleteNote.php?note_id=<?= $note['note_id'] ?>">Delete note</a>
+                    <h5 class="card-title"><?=$note['note_title']?></h5>
+                    <p class="card-text"><?=$note['note']?></p>
+                    <a class="btn btn-primary" href="editNote.php?note_id=<?=$note['note_id']?>">Edit note</a>
+                    <a class="btn btn-primary" href="deleteNote.php?note_id=<?=$note['note_id']?>">Delete note</a>
                 </div>
             </div>
-        <?php endwhile; ?>
+        <?php endwhile;?>
     </div>
 </div>
 <script type="text/javascript" src="js/pomodoro/test.js"></script>

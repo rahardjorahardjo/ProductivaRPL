@@ -108,9 +108,9 @@ function pause() {
   hold();
 }
 
-function stop() {
+function stopTime() {
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");
-  reset();
+  setMinutes(3);
   hold();
 }
