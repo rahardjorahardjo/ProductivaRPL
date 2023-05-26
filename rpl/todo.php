@@ -34,7 +34,7 @@ $cnt = mysqli_num_rows($q2);
     <h5><a href="index.php">back</a></h5>
     <h2>add category</h2>
     <form action="addCategory.php" method="post">
-        <input type="text" name="categoryname">
+        <input type="text" name="categoryname" required>
         <button>Add</button>
     </form>
     <?php $cat = mysqli_query($connection, "SELECT * FROM categories WHERE user_id = '$user_id'");?>
@@ -73,7 +73,7 @@ $cnt = mysqli_num_rows($q2);
             </tbody>
         </table>
         <form action="addTask.php?category_id=<?=$catid?>" method="post">
-            <input type="text" name="task">
+            <input type="text" name="task" required>
             <div">
                 <button>Add task</button>
             </div>

@@ -28,11 +28,13 @@ function updateDisplay(newMinutes, seconds) {
 function setMinutes(type) {
   if (type == 1) {
     updateDisplay((minutes += 5), 0);
-  } else {
+  } else if (type == 2) {
     updateDisplay((minutes -= 5), 0);
     if (minutes <= 0) {
       minutes = 0;
     }
+  } else {
+    updateDisplay(25, 0);
   }
 }
 
@@ -81,7 +83,7 @@ function hold() {
 }
 
 function increase() {
-  setMinutes(1);
+  setMinutes(3);
   hold();
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");
@@ -109,4 +111,6 @@ function pause() {
 function stop() {
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");
+  reset();
+  hold();
 }

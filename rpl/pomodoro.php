@@ -11,6 +11,9 @@ include 'config.php';
 //ambil data user
 $user_id = $_SESSION['user']['user_id'];
 
+$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'");
+mysqli_data_seek($query, 0)
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +28,8 @@ $user_id = $_SESSION['user']['user_id'];
     <title>Document</title>
 </head>
 <body>
-<div class="pomodoro">
+<a href="index.php" class="btn btn-primary">Back</a>
+<div class="p-5 pomodoro">
     <div>
         <span class="study">Study Time!</span>
         <span class="break hide">Break Time!</span>
@@ -36,15 +40,15 @@ $user_id = $_SESSION['user']['user_id'];
         <span class="seconds">00</span>
     </div>
     <div id="controls">
-        <button class="p-3 play" onclick="start()">Start</button>
-        <button class="p-3 pause hide" onclick="pause()">Pause</button>
-        <button class="p-3 stop" onclick="stop()">Stop</button>
-        <button class="p-3 increase" onclick="increase()">Increase</button>
-        <button class="p-3 decrease" onclick="decrease()">Decrease</button>
+        <button class="play" onclick="start()">Start</button>
+        <button class="pause hide" onclick="pause()">Pause</button>
+        <button class="stop" onclick="stop()">Stop</button>
+        <button class="increase" onclick="increase()">Increase</button>
+        <button class="decrease" onclick="decrease()">Decrease</button>
     </div>
 </div>
-<div class="pt-5 notes">
-    <div class="addNote">
+<div class="p-5 notes">
+    <div class="mb-2 addNote">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal" >Add Note</button>
         <div class="modal" id="noteModal">
             <div class="modal-dialog">
@@ -56,26 +60,35 @@ $user_id = $_SESSION['user']['user_id'];
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="addNote.php" method="post">
-                            <label for="noteTitle">New Title</label>
-                            <input type="text" class="noteTitle" name="noteTitle">
-                            <label for="note">New Note</label>
-                            <input type="text" class="note" name="note">
-                            <button class="btn btn-secondary">Add</button>
-                        </form>
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="addNote.php" method="post">
+                                    <label for="noteTitle" class="form-label">New Title</label>
+                                    <input type="text" class="noteTitle form-control" name="noteTitle" required>
+                                    <label for="note" class="form-label">New Note</label>
+                                    <input type="text" class="note form-control" name="note" required>
+                                    <button class="btn btn-primary">Add</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="noteDisplay">
-        <?php $query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'") ?>
-        <?php mysqli_data_seek($query, 0) ?>
+    <div>
         <?php while($note = mysqli_fetch_assoc($query)): ?>
-            <div class="noteTitle"><h2><?= $note['note_title'] ?></h2></div>
-            <div class="note"><p><?= $note['note'] ?></p></div>
+            <div class="mb-2 card" style="width: 24rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $note['note_title'] ?></h5>
+                    <p class="card-text"><?= $note['note'] ?></p>
+                    <a class="btn btn-primary" href="editNote.php?note_id=<?= $note['note_id'] ?>">Edit note</a>
+                    <a class="btn btn-primary" href="deleteNote.php?note_id=<?= $note['note_id'] ?>">Delete note</a>
+                </div>
+            </div>
         <?php endwhile; ?>
     </div>
+</div>
 <script type="text/javascript" src="js/pomodoro/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
