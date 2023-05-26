@@ -28,6 +28,7 @@ mysqli_data_seek($query, 0)
     <title>Document</title>
 </head>
 <body>
+    <?php include "editNote.php"?>
 <a href="index.php" class="btn btn-primary">Back</a>
 <div class="p-5 pomodoro">
     <div>
@@ -77,19 +78,49 @@ mysqli_data_seek($query, 0)
         </div>
     </div>
     <div>
-        <?php while ($note = mysqli_fetch_assoc($query)): ?>
-            <div class="mb-2 card" style="width: 24rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><?=$note['note_title']?></h5>
-                    <p class="card-text"><?=$note['note']?></p>
-                    <a class="btn btn-primary" href="editNote.php?note_id=<?=$note['note_id']?>">Edit note</a>
-                    <a class="btn btn-primary" href="deleteNote.php?note_id=<?=$note['note_id']?>">Delete note</a>
-                </div>
-            </div>
-        <?php endwhile;?>
+        <?php
+$noNotes = true;
+while ($note = mysqli_fetch_assoc($query)) {
+    $noNotes = false;
+    echo '
+                    <div class="mb-2 card" style="width: 24rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">' . $note['note_title'] . '</h5>
+                            <p class="card-text">' . $note['note'] . '</p>
+                            <a class="btn btn-primary edit" data-bs-toggle="modal" data-bs-target="#exampleModal" id="' . $note['note_id'] . '">Edit note</a>
+                            <a class="btn btn-primary" href="deleteNote.php?note_id=' . $note['note_id'] . '">Delete note</a>
+                        </div>
+                    </div>';
+}
+if ($noNotes) {
+    echo '
+                    <div class="mb-2 card" style="width: 24rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Message</h5>
+                            <p class="card-text">No notes are available for now</p>
+                        </div>
+                    </div>';
+}
+?>
     </div>
 </div>
 <script type="text/javascript" src="js/pomodoro/test.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    const edit = document.querySelectorAll(".edit");
+    const editTitle = document.getElementById("edittitle");
+    const editNote = document.getElementById("editnote");
+    const hiddenInput = document.getElementById("hidden");
+    edit.forEach(element =>{
+        element.addEventListener("click", ()=>{
+            const titleText = element.parentElement.children[0].innerText
+            const noteText = element.parentElement.children[1].innerText
+            editTitle.value = titleText;
+            editNote.value = noteText;
+            hiddenInput.value = element.id;
+            console.log(hiddenInput)
+        })
+    })
+</script>
 </body>
 </html>
