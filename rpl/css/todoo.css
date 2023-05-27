@@ -232,13 +232,19 @@ html {
     align-items: center;
 }
 
+.isi-list-box button{
+    text-align: right;
+    border-radius: 50%;
+}
 .isi-list-box p {
     line-height: 18px;
     font-weight: 400;
+    width: 165px;
     font-size: 18px;
     color: #FFF4E0;
     margin-left: 10px;
     color: #FFBF9B;
+
 }
 
 .isi-list-box input[type="checkbox"] {
@@ -280,7 +286,9 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
+
 
 .add-list-button button{
     font-size: 15px;

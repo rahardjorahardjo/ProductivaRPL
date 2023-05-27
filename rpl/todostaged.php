@@ -48,6 +48,7 @@ $cnt = mysqli_num_rows($q2);
         </div>
         <div class="kosong"></div>
         <div class="content-page">
+            
             <div class="add-task">
                 <form action="addCategory.php" method="post" class="add-task-box">
                     <button><i class="fas fa-plus"></i></button>
@@ -55,26 +56,46 @@ $cnt = mysqli_num_rows($q2);
                 </form>
             </div>
             <div class="task-list">
+                <?php $cat = mysqli_query($connection, "SELECT * FROM categories WHERE user_id = '$user_id'");?>
+                <?php mysqli_data_seek($cat, 0);?>
+                <?php while ($category = mysqli_fetch_assoc($cat)): ?>
+                <?php $catid = $category['category_id']?>
                 <div class="task-list-box">
                     <div class="judul-box">
-                        <p>
-                        </p>
-                        
+                        <h2 class="text-center"><?= $category['category_name'] ?></h2>
                     </div>
                     <div class="konten-box">
                         <div class="isi-list">
-                            <div class="isi-list-box">
-                                <input type="checkbox">
-                                <p>Tugas Pemprossman</p>
-                            </div>
+                            <?php
+                            $ta = mysqli_query($connection, "SELECT * FROM tasks WHERE category_id = '$catid' AND user_id = '$user_id'");
+                            while ($tasks = mysqli_fetch_assoc($ta)) {
+                                if ($tasks['status'] == 1) {
+                                    $isitask = '<s>' . $tasks['task'] . '</s>';
+                                } else {
+                                    $isitask = $tasks['task'];
+                                }
+                            ?>
+                                <div class="isi-list-box">
+                                    <input type="checkbox">
+                                    <p><?= $isitask ?></p>
+                                    <button >ss</button>
+                                </div>
+                            <?php } ?>
+
                         </div>
                         <div class="add-list-button">
                             <button>+ add new list</button>
                         </div>
+                        <div class="add-list-button">
+                            <button><a href="deleteCategory.php?category_id=<?=$category['category_id']?>">delete category</a></button>
+                        </div>
                     </div>
                 </div>
+                <?php endwhile;?>
             </div>
+
         </div>
+        
     </div>
 </body>
 </html>
