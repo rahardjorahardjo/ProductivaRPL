@@ -12,7 +12,6 @@ include 'config.php';
 $user_id = $_SESSION['user']['user_id'];
 
 ?>
-?>
 
 <html lang="en">
 <head>
@@ -34,19 +33,21 @@ $user_id = $_SESSION['user']['user_id'];
         <div class="pomodoro">
           <div class="Prompt">
               <h1 class="study">Study Time!</h1>
-              <span class="break hide">Break Time!</span>
+              <h1 class="break hide">Break Time!</h1>
           </div>
           <div class="PomodoroTimes" id="timer" >
               <span class="minutes">25</span>
               <span>:</span>
               <span class="seconds">00</span>
           </div>
-          <div class="Controla"id="controls">
-              <button class="p-3 play" onclick="start()">Start</button>
-              <button class="p-3 pause hide" onclick="pause()">Pause</button>
-              <button class="p-3 stop" onclick="stop()">Stop</button>
-              <button class="p-3 increase" onclick="increase()">Increase</button>
-              <button class="p-3 decrease" onclick="decrease()">Decrease</button>
+          <div class="Controla" id="controls">
+              <div class="playback">
+                <button class="decrease" onclick="decrease()"><img src="units/minus.png" alt=""></button>
+                <button class="play" onclick="start()"><img src="units/Vector.png" alt=""></button>
+                <button class="pause hide" onclick="pause()"><img src="units/pause.png" alt=""></button>
+                <button class="increase" onclick="increase()"><img src="units/plus.png" alt=""></button>
+              </div>
+              <button class="stop" onclick="stop()">Stop</button>
           </div>
       </div>
     </div>
@@ -92,8 +93,10 @@ $user_id = $_SESSION['user']['user_id'];
                         <form action="addNote.php" method="post">
                             <label for="noteTitle">New Title</label>
                             <input type="text" class="noteTitle" name="noteTitle">
-                            <label for="note">New Note</label>
-                            <input type="text" class="note" name="note">
+                            <div class="bawah">
+                              <label for="note">New Note</label>
+                              <input type="text" class="note" name="note">
+                            </div>
                             <button class="btn btn-secondary">Add</button>
                         </form>
                     </div>

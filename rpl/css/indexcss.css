@@ -5,6 +5,9 @@
     font-family: 'Inter';
     font-style: normal;
 }
+.body{
+    background-image: url(rpl/units/background.svg);
+}
 .navbar{
     box-sizing: border-box;
 
@@ -123,6 +126,13 @@ color: #FFF4E0;
     color: #FFF4E0;   
 }
 
+.backgrounds{
+    position: fixed;
+width: 1269.63px;
+height: 864.56px;
+left: 267.37px;
+top: 0px;
+}
 .logoutbuttondesc{
     position: fixed;
 width: 140.89px;
@@ -177,13 +187,6 @@ top: 635px;
 background: #262626;
 box-shadow: 6.40417px 6.40417px 4.0026px rgba(0, 0, 0, 0.25);
 border-radius: 31.2203px;
-}
-.backgrounds{
-    position: fixed;
-width: 1269.63px;
-height: 864.56px;
-left: 267.37px;
-top: 0px;
 }
 .spotifyTexts{
     position: absolute;
@@ -266,32 +269,59 @@ border-radius: 8.00521px;
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
-    padding-top: px;
+    
     color: #FFF4E0;   
     text-decoration: none;
 }
 .Prompt{
-    font-weight: 500;
-    font-size: 500px;
-    line-height: 23px;
     text-align: center;
-    margin-top: 50px;
-    margin-left: 15px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    color: #FFF4E0;   
-    text-decoration: none;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 23px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: #FFF4E0;
+    
 }
+
 .Controla{
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 23px;
     text-align: center;
-    margin-top: 25px;
-    margin-left: 15px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    color: #FFF4E0;   
-    text-decoration: none;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 23px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: #FFF4E0;
+}
+
+.Controla button{
+    width: 100px;
+    height: 50px;
+    border: none;
+    background: none;
+    /* border: 2px solid #FFF4E0; */
+}
+.playback{
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+}
+.playback img{
+    width: 45px;
+    height: 45px;
+}
+.playback .play img{
+    width: 30px;
+    height: 30px;
+}
+
+.Controla .stop{
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 23px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: #FFF4E0;
 }
 
