@@ -24,8 +24,6 @@ $cnt = mysqli_num_rows($q2);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/todo.css">
     <title>Document</title>
 </head>
@@ -38,7 +36,6 @@ $cnt = mysqli_num_rows($q2);
         <button>Add</button>
     </form>
     <?php $cat = mysqli_query($connection, "SELECT * FROM categories WHERE user_id = '$user_id'");?>
-    <?php $i = 1;?>
     <?php mysqli_data_seek($cat, 0);?>
     <?php while ($category = mysqli_fetch_assoc($cat)): ?>
     <?php $catid = $category['category_id']?>
@@ -52,15 +49,14 @@ $cnt = mysqli_num_rows($q2);
                 </tr>
             </thead>
             <?php $ta = mysqli_query($connection, "SELECT * FROM tasks WHERE category_id = '$catid' AND user_id = '$user_id'");?>
-            <?php $j = 1;?>
             <?php mysqli_data_seek($ta, 0);?>
             <?php while ($tasks = mysqli_fetch_assoc($ta)):
-    if ($tasks['status'] == 1) {
-        $isitask = '<s>' . $tasks['task'] . '</s>';
-    } else {
-        $isitask = $tasks['task'];
-    }
-    ?>
+                    if ($tasks['status'] == 1) {
+                       $isitask = '<s>' . $tasks['task'] . '</s>';
+                    } else {
+                        $isitask = $tasks['task'];
+                    }
+            ?>
 	            <tbody>
 	                <tr>
 	                <td><?=$isitask?></td>
@@ -68,7 +64,6 @@ $cnt = mysqli_num_rows($q2);
 	                <td class="text-center"><button"><a class="button-check" href="deleteTask.php?task_id=<?=$tasks['task_id']?>"><i class="bi bi-trash-fill"></i></a></button></td>
 	                </tr>
 	                <tr>
-	            <?php $j++;?>
 	            <?php endwhile;?>
             </tbody>
         </table>
@@ -80,8 +75,6 @@ $cnt = mysqli_num_rows($q2);
         </form>
     </div>
     </div>
-    <?php $i++;?>
     <?php endwhile;?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
