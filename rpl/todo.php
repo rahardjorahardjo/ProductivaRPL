@@ -12,7 +12,7 @@ $user_id = $_SESSION['user']['user_id'];
 $q = mysqli_query($connection, "SELECT * FROM tasks WHERE user_id = '$user_id'");
 $row = mysqli_fetch_assoc($q);
 
-$q2 = mysqli_query($connection, "SELECT * FROM categories");
+$q2 = mysqli_query($connection, "SELECT * FROM categories WHERE user_id = '$user_id'");
 $cnt = mysqli_num_rows($q2);
 
 ?>
