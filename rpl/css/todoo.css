@@ -232,7 +232,7 @@ html {
     align-items: center;
 }
 
-.isi-list-box button{
+.isi-list-box a{
     text-align: right;
     border-radius: 50%;
 }

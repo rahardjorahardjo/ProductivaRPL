@@ -78,7 +78,7 @@ $cnt = mysqli_num_rows($q2);
                                 <div class="isi-list-box">
                                     <input type="checkbox">
                                     <p><?= $isitask ?></p>
-                                    <button >ss</button>
+                                    <a href="deleteTask.php?task_id=<?=$tasks['task_id']?>">ss</a>
                                 </div>
                             <?php } ?>
 

@@ -17,7 +17,7 @@ $task = $_POST['task'];
 $datetime = date("Y-m-d H:i:s");
 
 mysqli_query($connection, "INSERT INTO tasks VALUES ('','$user_id', '$category_id', '$task', '$datetime','')");
-header("Location: todo.php")
+header("Location: todostaged.php")
 
 
 ?>
