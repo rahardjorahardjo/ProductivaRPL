@@ -47,7 +47,7 @@ $user_id = $_SESSION['user']['user_id'];
                 <button class="pause hide" onclick="pause()"><img src="units/pause.png" alt=""></button>
                 <button class="increase" onclick="increase()"><img src="units/plus.png" alt=""></button>
               </div>
-              <button class="stop" onclick="stop()">Stop</button>
+              <button class="stop" onclick="stopTime()">Stop</button>
           </div>
       </div>
     </div>

@@ -42,11 +42,11 @@ $cnt = mysqli_num_rows($q2);
                 <li><a href="todostaged.php">Task-List</a></li>
             </div>
             <div class="logout">
-                <img src="units/logout.png" alt="">
-                <p><a href="signout.php">Logout</a></p>
+                <p class="icon"><i class="fa-solid fa-right-from-bracket"></i></p>
+                <p><a href="signout.php" style="color:#FFF4E0;">Logout</a></p>
             </div>
             <img src="walking.png" alt="" class="gambar">
-        </div>
+    </div>
         <div class="kosong"></div>
         <div class="content-page">
 
@@ -86,7 +86,7 @@ $cnt = mysqli_num_rows($q2);
                                         <p>
                                             <?= $isitask ?>
                                         </p>
-                                        <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>"></a>
+                                        <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;"<i class="fa-regular fa-trash-can"></i></a>
                                     </div>
                                 <?php } ?>
 
@@ -98,11 +98,10 @@ $cnt = mysqli_num_rows($q2);
                                 </div>
                             <div class="button-wrap">
                                 <div class="add-list-button">
-                                    <button onclick="showInput('<?php echo $i ?>')">+ add new list</button>
+                                    <button onclick="showInput('<?php echo $i ?>')"><i class="fa-solid fa-plus"></i></button>
                                 </div>
                                 <div class="add-list-button">
-                                    <button><a href="deleteCategory.php?category_id=<?= $category['category_id'] ?>">delete
-                                            category<?php echo $i?></a></button>
+                                    <button><a href="deleteCategory.php?category_id=<?= $category['category_id'] ?>" style="text-decoration: none; color:black;"><i class="fa-regular fa-trash-can"></i></a></button>
                                 </div>
                             </div>
 

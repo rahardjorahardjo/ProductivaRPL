@@ -116,7 +116,11 @@ html {
 .logout p {
     font-weight: 600;
     font-size: 20px;
-    color: #FFF4E0;
+    color: #FFF4E0 !important;
+}
+
+.icon {
+    margin-right: 10px;
 }
 
 .kosong {
@@ -240,7 +244,6 @@ html {
 
 .isi-list-box a{
     text-align: right;
-    background-image: url(../units/bin.png);
     width: 20px;
     height: 20px;
     margin-right: 10px;
