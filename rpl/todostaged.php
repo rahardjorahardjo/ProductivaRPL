@@ -49,7 +49,6 @@ $cnt = mysqli_num_rows($q2);
     </div>
         <div class="kosong"></div>
         <div class="content-page">
-
             <div class="add-task">
                 <form action="addCategory.php" method="post" class="add-task-box">
                     <button><i class="fas fa-plus"></i></button>
@@ -86,7 +85,7 @@ $cnt = mysqli_num_rows($q2);
                                         <p>
                                             <?= $isitask ?>
                                         </p>
-                                        <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;" <i class="fa-regular fa-trash-can">></i></a>
+                                        <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;" <i class="fa-regular fa-trash-can"></i></a>
                                     </div>
                                 <?php } ?>
 
@@ -110,7 +109,8 @@ $cnt = mysqli_num_rows($q2);
                     <?php $i++; ?>
                 <?php endwhile; ?>
             </div>
-
+            <div class="blank"></div>
+        
         </div>
 
     </div>

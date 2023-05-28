@@ -344,3 +344,7 @@ html {
 .add-list-button button:hover{
     cursor: pointer;
 }
+
+.blank{
+    margin-bottom: 109px;
+}

@@ -14,75 +14,79 @@ $user_id = $_SESSION['user']['user_id'];
 $query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'");
 mysqli_data_seek($query, 0)
 
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/pomodoro.css">
     <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <?php include "editNote.php"?>
-<a href="index.php" class="btn btn-primary">Back</a>
-<div class="p-5 pomodoro">
-    <div>
-        <span class="study">Study Time!</span>
-        <span class="break hide">Break Time!</span>
+    <?php include "editNote.php" ?>
+    <a href="index.php" class="btn btn-primary">Back</a>
+    <div class="p-5 pomodoro">
+        <div>
+            <span class="study">Study Time!</span>
+            <span class="break hide">Break Time!</span>
+        </div>
+        <div id="timer">
+            <span class="minutes">25</span>
+            <span>:</span>
+            <span class="seconds">00</span>
+        </div>
+        <div id="controls">
+            <button class="play" onclick="start()">Start</button>
+            <button class="pause hide" onclick="pause()">Pause</button>
+            <button class="stop" onclick="stopTime()">Stop</button>
+            <button class="increase" onclick="increase()">Increase</button>
+            <button class="decrease" onclick="decrease()">Decrease</button>
+        </div>
     </div>
-    <div id="timer" >
-        <span class="minutes">25</span>
-        <span>:</span>
-        <span class="seconds">00</span>
-    </div>
-    <div id="controls">
-        <button class="play" onclick="start()">Start</button>
-        <button class="pause hide" onclick="pause()">Pause</button>
-        <button class="stop" onclick="stopTime()">Stop</button>
-        <button class="increase" onclick="increase()">Increase</button>
-        <button class="decrease" onclick="decrease()">Decrease</button>
-    </div>
-</div>
-<div class="p-5 notes">
-    <div class="mb-2 addNote">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal" >Add Note</button>
-        <div class="modal" id="noteModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add New Note</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="card">
-                            <div class="card-body">
-                                <form action="addNote.php" method="post">
-                                    <label for="noteTitle" class="form-label">New Title</label>
-                                    <input type="text" class="noteTitle form-control" name="noteTitle" required>
-                                    <label for="note" class="form-label">New Note</label>
-                                    <input type="text" class="note form-control" name="note" required>
-                                    <button class="btn btn-primary">Add</button>
-                                </form>
+    <div class="p-5 notes">
+        <div class="mb-2 addNote">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal">Add
+                Note</button>
+            <div class="modal" id="noteModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add New Note</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form action="addNote.php" method="post">
+                                        <label for="noteTitle" class="form-label">New Title</label>
+                                        <input type="text" class="noteTitle form-control" name="noteTitle" required>
+                                        <label for="note" class="form-label">New Note</label>
+                                        <input type="text" class="note form-control" name="note" required>
+                                        <button class="btn btn-primary">Add</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <?php
-$noNotes = true;
-while ($note = mysqli_fetch_assoc($query)) {
-    $noNotes = false;
-    echo '
+        <div>
+            <?php
+            $noNotes = true;
+            while ($note = mysqli_fetch_assoc($query)) {
+                $noNotes = false;
+                echo '
                     <div class="mb-2 card" style="width: 24rem;">
                         <div class="card-body">
                             <h5 class="card-title">' . $note['note_title'] . '</h5>
@@ -91,36 +95,39 @@ while ($note = mysqli_fetch_assoc($query)) {
                             <a class="btn btn-primary" href="deleteNote.php?note_id=' . $note['note_id'] . '">Delete note</a>
                         </div>
                     </div>';
-}
-if ($noNotes) {
-    echo '
+            }
+            if ($noNotes) {
+                echo '
                     <div class="mb-2 card" style="width: 24rem;">
                         <div class="card-body">
                             <h5 class="card-title">Message</h5>
                             <p class="card-text">No notes are available for now</p>
                         </div>
                     </div>';
-}
-?>
+            }
+            ?>
+        </div>
     </div>
-</div>
-<script type="text/javascript" src="js/pomodoro/test.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script>
-    const edit = document.querySelectorAll(".edit");
-    const editTitle = document.getElementById("edittitle");
-    const editNote = document.getElementById("editnote");
-    const hiddenInput = document.getElementById("hidden");
-    edit.forEach(element =>{
-        element.addEventListener("click", ()=>{
-            const titleText = element.parentElement.children[0].innerText
-            const noteText = element.parentElement.children[1].innerText
-            editTitle.value = titleText;
-            editNote.value = noteText;
-            hiddenInput.value = element.id;
-            console.log(hiddenInput)
+    <script type="text/javascript" src="js/pomodoro/test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        const edit = document.querySelectorAll(".edit");
+        const editTitle = document.getElementById("edittitle");
+        const editNote = document.getElementById("editnote");
+        const hiddenInput = document.getElementById("hidden");
+        edit.forEach(element => {
+            element.addEventListener("click", () => {
+                const titleText = element.parentElement.children[0].innerText
+                const noteText = element.parentElement.children[1].innerText
+                editTitle.value = titleText;
+                editNote.value = noteText;
+                hiddenInput.value = element.id;
+                console.log(hiddenInput)
+            })
         })
-    })
-</script>
+    </script>
 </body>
+
 </html>

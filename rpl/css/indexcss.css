@@ -222,7 +222,7 @@ color: #FFFFFF;
 .taskBox{
     position: absolute;
 width: 426.68px;
-height: 320.21px;
+height: 564.37px;
 left: 997.45px;
 top: 40px;
 
@@ -249,6 +249,18 @@ border-radius: 8.00521px;
     text-decoration: none;
     margin: 10px;
 }
+.noteDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+.noteDisplay::-webkit-scrollbar {
+    width: 0px;
+}
 .noteTitle{
     font-weight: 500;
     font-size: 19.2125px;
@@ -260,6 +272,10 @@ border-radius: 8.00521px;
     padding-top: 10px;
     color: #FFF4E0;   
     text-decoration: none;
+}
+
+.addnote{
+    margin-left: 20px;
 }
 
 .PomodoroTimes{
