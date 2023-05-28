@@ -86,7 +86,7 @@ $cnt = mysqli_num_rows($q2);
                                         <p>
                                             <?= $isitask ?>
                                         </p>
-                                        <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;"<i class="fa-regular fa-trash-can"></i></a>
+                                        <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;" <i class="fa-regular fa-trash-can">></i></a>
                                     </div>
                                 <?php } ?>
 
