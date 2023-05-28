@@ -92,11 +92,13 @@ $user_id = $_SESSION['user']['user_id'];
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form action="addNote.php" method="post">
-                            <label for="noteTitle">New Title</label>
-                            <input type="text" class="noteTitle" name="noteTitle">
-                            <div class="bawah">
-                              <label for="note">New Note</label>
-                              <input type="text" class="note" name="note">
+                            <div class="mb-3">
+                              <label for="noteTitle" class="form-label">New Title</label>
+                              <input type="text" class="form-control" name="noteTitle">
+                            </div>
+                            <div class="mb-3">
+                              <label for="note" class="form-label">New Note</label>
+                              <textarea name="note" class="note form-control" cols="30" rows="3"></textarea>
                             </div>
                             <button class="btn btn-secondary">Add</button>
                         </form>
