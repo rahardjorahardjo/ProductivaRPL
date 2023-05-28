@@ -49,6 +49,7 @@ $cnt = mysqli_num_rows($q2);
     </div>
         <div class="kosong"></div>
         <div class="content-page">
+            <div class="backgroundsvg"></div>
             <div class="add-task">
                 <form action="addCategory.php" method="post" class="add-task-box">
                     <button><i class="fas fa-plus"></i></button>
@@ -112,7 +113,6 @@ $cnt = mysqli_num_rows($q2);
             <div class="blank"></div>
         
         </div>
-
     </div>
     <script>
         function showInput(containerId) {

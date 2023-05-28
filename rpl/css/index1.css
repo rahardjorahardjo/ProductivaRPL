@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.productiva {
+    display: flex;
+    flex-direction: row;
+}
+
+.side-navbar {
+    padding: 20px;
+    width: 15.2%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFBF9B;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow: hidden;
+    position: fixed;
+}
+
+.side-navbar .gambar {
+    transform: translateY(-150px);
+    z-index: -1;
+}
+
+.profile {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    padding-top: 10px;
+    width: 115.87px;
+    height: 104.87px;
+    object-fit: cover;
+    background-color: #B46060;
+    border-radius: 50%;
+}
+
+.productiva h1 {
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 26.2927px;
+    line-height: 40px;
+    color: #FFF4E0;
+    text-align: center;
+}
+
+.features {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+
+.features li {
+    margin-top: 17px;
+    width: 174.51px;
+    height: 42.23px;
+    background: #B46060;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.features li a {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+    color: #FFF4E0;
+}
+
+.features li:hover {
+    background: #c37474;
+}
+
+.logout {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100px;
+    height: 20px;
+    background: #4D4D4D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.logout img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.logout p {
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFF4E0 !important;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.kosong {
+    width: 18.2%;
+}
+
+.content-page {
+    width: 84%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../units/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    gap: 200px;
+}
