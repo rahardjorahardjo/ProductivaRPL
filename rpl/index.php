@@ -40,8 +40,8 @@ if(mysqli_num_rows($query) < 1){
 <body>
     <div class="container">
         <a href="signout.php">logout</a>
-        <a href="todo.php">todolist</a>
-        <a href="pomodoro.php">pomodoro</a>
+        <a href="todostaged.php">todolist</a>
+        <a href="pomodorostage1.php">pomodoro</a>
     </div>
     <div class="container datetime">
         <div class="date">Date</div>

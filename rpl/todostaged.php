@@ -43,7 +43,7 @@ $cnt = mysqli_num_rows($q2);
             </div>
             <div class="logout">
                 <img src="units/logout.png" alt="">
-                <p>Logout</p>
+                <p><a href="signout.php">Logout</a></p>
             </div>
             <img src="walking.png" alt="" class="gambar">
         </div>

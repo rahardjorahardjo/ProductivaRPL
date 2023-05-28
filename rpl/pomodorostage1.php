@@ -114,15 +114,15 @@ $user_id = $_SESSION['user']['user_id'];
     
         <div class="profile"></div>
         <h1 class="navbartitle">Pomodoro</h1>
-        <a href="Index.php" class="homebutton">
+        <a href="index.php" class="homebutton">
           <h2 class="homebuttondesc">Home</h2>
         </a>
     
-        <a href="pomodoro.php" class="pomodorobutton">
+        <a href="pomodorostage1.php" class="pomodorobutton">
           <h2 class="pomodorobuttondesc">Pomodoro</h2>
         </a>
     
-        <a href="todo.php" class="task-listbutton">
+        <a href="todostaged.php" class="task-listbutton">
           <h2 class="task-listdesc">Task-list</h2>
         </a>
     
