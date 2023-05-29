@@ -27,7 +27,7 @@ $cnt = mysqli_num_rows($q2);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/todoo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <title>Document</title>
+    <title>Productiva. | Task-List</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@ $cnt = mysqli_num_rows($q2);
         <div class="side-navbar">
             <div class="profile">
             </div>
-            <h1>Produktiva</h1>
+            <h1>Productiva.</h1>
             <div class="features">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="pomodorostage1.php">Podomoro</a></li>

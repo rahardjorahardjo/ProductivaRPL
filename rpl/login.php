@@ -23,7 +23,7 @@ if(isset($_POST['signin'])){
             $_SESSION["user"] = $data;
             $_SESSION["login"] = true;
 
-            header("Location: index.php");
+            header("Location: indexstaged.php");
 
             exit; //keluar fungsi if
         }
@@ -46,7 +46,7 @@ if(isset($_POST['signin'])){
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Login Form</title>
+    <title>Productiva. | Login</title>
   </head>
 
   <style>
@@ -101,18 +101,18 @@ if(isset($_POST['signin'])){
                   
                   <form method="post">
                       <div class="mb-1">
-                          <label for="input2" class="form-label" style="color: #FFF4E0">username</label>
+                          <label for="input2" class="form-label" style="color: #FFF4E0">Username</label>
                           <input type="text" class="form-control" name="username" style="background-color: #FFBF9B;" id="floatingInput"  placeholder="Your Username">
                         </div>
-                      <div class="mb-5">
-                          <label for="" class="form-label" style="color: #FFF4E0">password</label>
+                      <div class="mb-3">
+                          <label for="" class="form-label" style="color: #FFF4E0">Password</label>
                           <input type="password" name="password" class="form-control" style="background-color: #FFBF9B;" id="floatingPassword" placeholder="Enter Password">
                       </div>
-                      <div class="text-center">
+                      <div class="text-center mb-3">
                           <button class="btn" id="signin" type="submit" name="signin">Login </button>
                       </div>
                   </form>
-                  <a href="register.php">dont have any account?</a>
+                  <p style="color:#FFF4E0;">Don't have any account? <a href="register.php" style="font-weight: bold;">Sign Up</a></p>
                 </div>
               </div>
             </div>

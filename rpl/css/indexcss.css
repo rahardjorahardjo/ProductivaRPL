@@ -154,7 +154,7 @@ text-decoration: none;
     margin-top: 0px;
 
     margin-bottom: 0px;
-    padding-top: 5px;
+    padding-top: 3px;
     color: #FFF4E0;   
 }
 .navbarimg{
@@ -339,6 +339,7 @@ border-radius: 8.00521px;
     line-height: 23px;
     margin-top: 35px;
     margin-bottom: 35px;
+    margin-right: 4.5px;
     color: #FFF4E0;
 }
 

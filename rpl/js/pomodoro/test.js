@@ -83,7 +83,7 @@ function hold() {
 }
 
 function increase() {
-  setMinutes(3);
+  setMinutes(1);
   hold();
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");

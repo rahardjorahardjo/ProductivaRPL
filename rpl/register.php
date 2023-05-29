@@ -57,7 +57,7 @@ if(isset($_POST['signup'])){
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Login Form</title>
+    <title>Productiva. | Registration</title>
   </head>
 
   <style>
@@ -123,19 +123,19 @@ if(isset($_POST['signup'])){
                           <label for="input2" class="form-label" style="color: #FFF4E0">Email</label>
                           <input type="email" class="form-control" name="email" style="background-color: #FFBF9B;" id="floatingInput"  placeholder="name@example.com" required>
                       </div>
-                      <div class="mb-5">
+                      <div class="mb-3">
                           <label for="" class="form-label" style="color: #FFF4E0">Password</label>
                           <input type="password" name="password" class="form-control" style="background-color: #FFBF9B;" id="floatingPassword" placeholder="Enter Password" required>
                       </div>
-                      <div class="mb-5">
+                      <div class="mb-3">
                           <label for="" class="form-label" style="color: #FFF4E0">Confirm Password</label>
                           <input type="password" name="password2" class="form-control" style="background-color: #FFBF9B;" id="floatingPassword" placeholder="Enter Password"required>
                       </div>
-                      <div class="text-center">
+                      <div class="text-center mb-3">
                           <button class="btn" id="signin" type="submit" name="signup">Register</button>
                       </div>
                   </form>
-                  <a href="login.php">Already have an account?</a>
+                  <p style="color: #FFF4E0;">Already have an account? <a href="login.php" style="font-weight: bold;">Log in</a></p>
                 </div>
               </div>
             </div>

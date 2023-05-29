@@ -19,9 +19,10 @@ $user_id = $_SESSION['user']['user_id'];
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro</title>
+  <title>Productiva. | Pomodoro</title>
   <link rel="stylesheet" href="css/indexcss.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +42,7 @@ $user_id = $_SESSION['user']['user_id'];
         <h1 class="break hide">Break Time!</h1>
       </div>
       <div class="PomodoroTimes" id="timer">
-        <span class="minutes">25</span>
+        <span class="minutes">01</span>
         <span>:</span>
         <span class="seconds">00</span>
       </div>
@@ -52,7 +53,7 @@ $user_id = $_SESSION['user']['user_id'];
           <button class="pause hide" onclick="pause()"><img src="units/pause.png" alt=""></button>
           <button class="increase" onclick="increase()"><img src="units/plus.png" alt=""></button>
         </div>
-        <button class="stop" onclick="stopTime()">Stop</button>
+        <button class="stop" onclick="stopTime()"><i class="fa-solid fa-stop fa-lg" style="color: black;"></i></button>
       </div>
     </div>
   </div>
@@ -170,8 +171,8 @@ $user_id = $_SESSION['user']['user_id'];
     </div>
 
     <div class="profile"></div>
-    <h1 class="navbartitle">Produktiva</h1>
-    <a href="index.php" class="homebutton">
+    <h1 class="navbartitle">Productiva.</h1>
+    <a href="indexstaged.php" class="homebutton">
       <h2 class="homebuttondesc">Home</h2>
     </a>
 
@@ -184,6 +185,7 @@ $user_id = $_SESSION['user']['user_id'];
     </a>
 
     <a href="signout.php" class="logoutbuttons">
+    
       <h2 class="logoutbuttondesc">Logout</h2>
 
     </a>

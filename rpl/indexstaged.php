@@ -36,7 +36,7 @@ if (mysqli_num_rows($query) < 1) {
     <link rel="stylesheet" href="css/index1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="js/index.js" defer></script>
-    <title>Document</title>
+    <title>Productiva. | Homepage</title>
     <title>Widget Waktu Lokal</title>
     <style>
         .clock {
@@ -54,9 +54,9 @@ if (mysqli_num_rows($query) < 1) {
         <div class="side-navbar">
             <div class="profile">
             </div>
-            <h1>Produktiva</h1>
+            <h1>Productiva.</h1>
             <div class="features">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="indexstaged.php">Home</a></li>
                 <li><a href="pomodorostage1.php">Podomoro</a></li>
                 <li><a href="todostaged.php">Task-List</a></li>
             </div>
