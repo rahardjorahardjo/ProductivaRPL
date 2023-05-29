@@ -24,7 +24,7 @@ if(mysqli_num_rows($query) < 1){
 }
 
 //ambil data to-do
-$queryTask = mysqli_query($connection, "SELECT * FROM tasks WHERE user_id = '$user_id' ORDER BY datetime ASC");
+$queryTask = mysqli_query($connection, "SELECT * FROM tasks JOIN categories ON tasks.category_id = categories.category_id WHERE tasks.user_id = '$user_id' ORDER BY tasks.datetime ASC");
 mysqli_data_seek($queryTask, 0);
 
 ?>
@@ -108,11 +108,11 @@ mysqli_data_seek($queryTask, 0);
                                     for ($i = 0; $i < $cnt; $i++) {
                                         $task = mysqli_fetch_assoc($queryTask);
                                         if ($task['status'] == 1) {
-                                            $isitask = '<s>' . $task['task'] . '</s>';
+                                            $isitask = '<s>' . $task['task'] . ' - '.$task['category_name'].'</s>';
                                         } else {
                                             $isitask = $task['task'];
                                         }
-                                        echo '<p>' . $task['task'] . '</p>';
+                                        echo '<p>' . $task['task'] . ' -  '.$task['category_name'].'</p>';
                                     }
                                 }
                                 ?>
