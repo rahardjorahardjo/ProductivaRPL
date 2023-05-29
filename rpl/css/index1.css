@@ -136,7 +136,8 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding:80px;
+    padding: 50px 80px;
+    padding-bottom: 0;
 }
 
 .backgroundsvg{
@@ -160,8 +161,22 @@ html {
     background-color: #B46060;
     height: 100px;
     width: 100%;
-    padding: 50px;
+    padding: 50px 0;
     border-radius: 10px;
+}
+
+.containerNoteTask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-right: -50px;
+    margin-left: -50px;
 }
 .date{
     text-align: center;
@@ -173,6 +188,8 @@ html {
     font-size: 50px;
     border-radius: 8px;
     height: 80px;
+    margin-left: 50px;
+    padding: 10px;
 }
 .time{
     text-align: center;
@@ -184,22 +201,11 @@ html {
     font-size: 50px;
     border-radius: 8px;
     height: 80px;
+    margin-right: 50px;
+    padding: 10px;
 }
 
-.containerNoteTask{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    border: none;
-    background-color: #FFBF9B;
-    height: 250px;
-    width: 100%;
-    padding: 50px;
-    border-radius: 10px;
-    margin-top: 50px;
-}
+
 .notelist{
     width: 50%;
     height: 100%;
@@ -209,20 +215,49 @@ html {
 }
 .Tasklist{
     width: 50%;
-    height: 100%;
     background-color: #B46060;
     border-radius: 8px;
+    padding: 10px;
 }
 
-.container h1{
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.judul-task {
+    border-radius: 10px;
+    background-color: #FFBF9B;
+    padding: 5px;
+    transform: translateY(-70%);
+    width: 100px;
+}
+
+.judul-task h1{
     font-family: 'Inter', sans-serif;
     color: #FFF4E0;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0;
 }
 
-.container p{
-    font-family: 'Inter', sans-serif;
-    color: #FFF4E0;
+.container .list-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    max-height: 300px;
+    overflow-x: hidden;
+}
+
+.list-box::-webkit-scrollbar {
+    width: 0px;
+}
+
+.list-box p {
+    background-color: #4D4D4D;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #FFBF9B;
+    padding: 5px;
 }

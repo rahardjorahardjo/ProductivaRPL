@@ -81,36 +81,37 @@ mysqli_data_seek($queryTask, 0);
             <div class="containerNoteTask">
                 <div class="notelist">
                     <div class="notecontent">
-                        <form action="" method="post">
-                            <input type="text" name="title" value="<?= $note_title ?>" disabled>
-                            <input type="text" name="notes" value="<?= $note ?>" disabled>
-                        </form>
+                        
                     </div>
                 </div>
                 <div class="Tasklist">
                     <div class="container">
-                        <h1>Tasks</h1>
-                        <?php
-                        $total = mysqli_num_rows($queryTask);
-                        if ($total == 0) {
-                            echo '<p>No Task Available</p>';
-                        } else {
-                            if ($total < 10) {
-                                $cnt = $total;
-                            } else {
-                                $cnt = 10;
-                            }
-                            for ($i = 0; $i < $cnt; $i++) {
-                                $task = mysqli_fetch_assoc($queryTask);
-                                if ($task['status'] == 1) {
-                                    $isitask = '<s>' . $task['task'] . '</s>';
+                        <div class="judul-task">
+                            <h1>Tasks</h1>
+                        </div>   
+                        <div class="list-box">
+                                <?php
+                                $total = mysqli_num_rows($queryTask);
+                                if ($total == 0) {
+                                    echo '<p>No Task Available</p>';
                                 } else {
-                                    $isitask = $task['task'];
+                                    if ($total < 10) {
+                                        $cnt = $total;
+                                    } else {
+                                        $cnt = 10;
+                                    }
+                                    for ($i = 0; $i < $cnt; $i++) {
+                                        $task = mysqli_fetch_assoc($queryTask);
+                                        if ($task['status'] == 1) {
+                                            $isitask = '<s>' . $task['task'] . '</s>';
+                                        } else {
+                                            $isitask = $task['task'];
+                                        }
+                                        echo '<p>' . $task['task'] . '</p>';
+                                    }
                                 }
-                                echo '<p>' . $task['task'] . '</p>';
-                            }
-                        }
-                        ?>
+                                ?>
+                        </div>
                     </div>
                 </div>
 
@@ -149,11 +150,13 @@ mysqli_data_seek($queryTask, 0);
                 // Panggil fungsi updateClock setiap detik
                 setInterval(updateClock, 1000);
             </script> -->
+            
         </div>
 
     </div>
 
 
 </body>
+
 
 </html>

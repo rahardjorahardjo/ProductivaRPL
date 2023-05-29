@@ -37,7 +37,7 @@ $cnt = mysqli_num_rows($q2);
             </div>
             <h1>Productiva.</h1>
             <div class="features">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="indexstaged.php">Home</a></li>
                 <li><a href="pomodorostage1.php">Podomoro</a></li>
                 <li><a href="todostaged.php">Task-List</a></li>
             </div>

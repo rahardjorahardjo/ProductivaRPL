@@ -53,3 +53,29 @@ setInterval(() => {
   timeElement.textContent = formatTime(now);
   dateElement.textContent = formatDate(now);
 }, 200);
+
+
+// index.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  var noteContent = document.querySelector('.notecontent');
+  var location = "Jakarta";
+  var locationFormatted = location.replace(/ /g, '+');
+  var apiKey = 'kunci_api_anda';
+  var weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + locationFormatted + ',Indonesia&units=metric&appid=' + apiKey;
+
+  fetch(weatherUrl)
+      .then(function(response) {
+          return response.json();
+      })
+      .then(function(data) {
+          var weatherDescription = data.weather[0].description;
+          var temperature = data.main.temp;
+
+          noteContent.innerHTML = 'Cuaca di ' + location + ': ' + weatherDescription + ', Suhu: ' + temperature + '°C';
+      })
+      .catch(function(error) {
+          console.log('Terjadi kesalahan:', error);
+      });
+});
+
