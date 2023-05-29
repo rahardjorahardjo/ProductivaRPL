@@ -12,9 +12,9 @@ include 'config.php';
 $user_id = $_SESSION['user']['user_id'];
 
 //ambil data notes
-$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id' ORDER BY datetime_note DESC");
+$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'");
 $notes = mysqli_fetch_assoc($query);
-if (mysqli_num_rows($query) < 1) {
+if(mysqli_num_rows($query) < 1){
     $note_title = "Notes";
     $note = "Notes";
 } else {
@@ -22,6 +22,10 @@ if (mysqli_num_rows($query) < 1) {
     $note = $notes['note'];
 
 }
+
+//ambil data to-do
+$queryTask = mysqli_query($connection, "SELECT * FROM tasks WHERE user_id = '$user_id' ORDER BY datetime ASC");
+mysqli_data_seek($queryTask, 0);
 
 ?>
 
@@ -49,6 +53,7 @@ if (mysqli_num_rows($query) < 1) {
         }
     </style>
 </head>
+
 <body>
     <div class="productiva">
         <div class="side-navbar">
@@ -69,50 +74,81 @@ if (mysqli_num_rows($query) < 1) {
         <div class="kosong"></div>
         <div class="content-page">
             <div class="backgroundsvg"></div>
-            <div class="container datetime">
+            <div class="containerDatetime">
                 <div class="date">Date</div>
                 <div class="time">Time</div>
             </div>
-            <div class="container p-3">
-                <form action="" method="post">
-                    <input type="text" name="title" value="<?= $note_title ?>" disabled>
-                    <input type="text" name="notes" value="<?= $note ?>" disabled>
-                </form>
+            <div class="containerNoteTask">
+                <div class="notelist">
+                    <div class="notecontent">
+                        <form action="" method="post">
+                            <input type="text" name="title" value="<?= $note_title ?>" disabled>
+                            <input type="text" name="notes" value="<?= $note ?>" disabled>
+                        </form>
+                    </div>
+                </div>
+                <div class="Tasklist">
+                    <div class="container">
+                        <h1>Tasks</h1>
+                        <?php
+                        $total = mysqli_num_rows($queryTask);
+                        if ($total == 0) {
+                            echo '<p>No Task Available</p>';
+                        } else {
+                            if ($total < 10) {
+                                $cnt = $total;
+                            } else {
+                                $cnt = 10;
+                            }
+                            for ($i = 0; $i < $cnt; $i++) {
+                                $task = mysqli_fetch_assoc($queryTask);
+                                if ($task['status'] == 1) {
+                                    $isitask = '<s>' . $task['task'] . '</s>';
+                                } else {
+                                    $isitask = $task['task'];
+                                }
+                                echo '<p>' . $task['task'] . '</p>';
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+
             </div>
-            <div class="clock">Loading...</div>
+            <!-- <div class="clock">Loading...</div>
 
             <script>
-        function updateClock() {
-            var clockElement = document.querySelector('.clock');
-            var currentTime = new Date();
-            var hours = currentTime.getHours();
-            var minutes = currentTime.getMinutes();
-            var seconds = currentTime.getSeconds();
-            var day = currentTime.getDate();
-            var month = currentTime.getMonth() + 1; // Ditambahkan 1 karena Januari dimulai dari 0
-            var year = currentTime.getFullYear();
+                function updateClock() {
+                    var clockElement = document.querySelector('.clock');
+                    var currentTime = new Date();
+                    var hours = currentTime.getHours();
+                    var minutes = currentTime.getMinutes();
+                    var seconds = currentTime.getSeconds();
+                    var day = currentTime.getDate();
+                    var month = currentTime.getMonth() + 1; // Ditambahkan 1 karena Januari dimulai dari 0
+                    var year = currentTime.getFullYear();
 
-            // Tambahkan angka 0 di depan jam, menit, dan detik jika hanya satu digit
-            hours = (hours < 10 ? '0' : '') + hours;
-            minutes = (minutes < 10 ? '0' : '') + minutes;
-            seconds = (seconds < 10 ? '0' : '') + seconds;
+                    // Tambahkan angka 0 di depan jam, menit, dan detik jika hanya satu digit
+                    hours = (hours < 10 ? '0' : '') + hours;
+                    minutes = (minutes < 10 ? '0' : '') + minutes;
+                    seconds = (seconds < 10 ? '0' : '') + seconds;
 
-            // Format waktu sebagai string HH:MM:SS
-            var timeString = hours + ':' + minutes + ':' + seconds;
+                    // Format waktu sebagai string HH:MM:SS
+                    var timeString = hours + ':' + minutes + ':' + seconds;
 
-            // Format tanggal sebagai string DD/MM/YYYY
-            var dateString = day + '/' + month + '/' + year;
+                    // Format tanggal sebagai string DD/MM/YYYY
+                    var dateString = day + '/' + month + '/' + year;
 
-            // Gabungkan waktu dan tanggal dalam satu string
-            var dateTimeString = dateString + ' ' + timeString;
+                    // Gabungkan waktu dan tanggal dalam satu string
+                    var dateTimeString = dateString + ' ' + timeString;
 
-            // Perbarui elemen HTML dengan tanggal dan waktu lokal yang terbaru
-            clockElement.textContent = dateTimeString;
-        }
+                    // Perbarui elemen HTML dengan tanggal dan waktu lokal yang terbaru
+                    clockElement.textContent = dateTimeString;
+                }
 
-        // Panggil fungsi updateClock setiap detik
-        setInterval(updateClock, 1000);
-    </script>
+                // Panggil fungsi updateClock setiap detik
+                setInterval(updateClock, 1000);
+            </script> -->
         </div>
 
     </div>

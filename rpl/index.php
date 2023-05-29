@@ -58,27 +58,27 @@ mysqli_data_seek($queryTask, 0);
         </form>
     </div>
     <div class="container">
-    <?php
-    $total = mysqli_num_rows($queryTask);
-    if($total == 0){
-        echo '<p>No Task Available</p>';
-    } else{
-        if($total < 10){
-            $cnt = $total;
-        } else {
-            $cnt = 10;
-        }
-        for($i = 0; $i<$cnt; $i++){
-            $task = mysqli_fetch_assoc($queryTask);
-            if ($task['status'] == 1) {
-                $isitask = '<s>' . $task['task'] . '</s>';
+        <?php
+        $total = mysqli_num_rows($queryTask);
+        if($total == 0){
+            echo '<p>No Task Available</p>';
+        } else{
+            if($total < 10){
+                $cnt = $total;
             } else {
-                $isitask = $task['task'];
+                $cnt = 10;
             }
-            echo '<p>'.$task['task'].'</p>';
+            for($i = 0; $i<$cnt; $i++){
+                $task = mysqli_fetch_assoc($queryTask);
+                if ($task['status'] == 1) {
+                    $isitask = '<s>' . $task['task'] . '</s>';
+                } else {
+                    $isitask = $task['task'];
+                }
+                echo '<p>'.$task['task'].'</p>';
+            }
         }
-    }
-    ?>
+        ?>
     </div>
     
 
