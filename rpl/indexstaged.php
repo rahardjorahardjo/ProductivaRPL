@@ -12,7 +12,7 @@ include 'config.php';
 $user_id = $_SESSION['user']['user_id'];
 
 //ambil data notes
-$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id'");
+$query = mysqli_query($connection, "SELECT * FROM notes WHERE user_id = '$user_id' ORDER BY datetime_note DESC");
 $notes = mysqli_fetch_assoc($query);
 if (mysqli_num_rows($query) < 1) {
     $note_title = "Notes";
