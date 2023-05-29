@@ -23,6 +23,10 @@ if(mysqli_num_rows($query) < 1){
 
 }
 
+//ambil data to-do
+$queryTask = mysqli_query($connection, "SELECT * FROM tasks WHERE user_id = '$user_id' ORDER BY datetime ASC");
+mysqli_data_seek($queryTask, 0);
+
 ?>
 
 
@@ -52,6 +56,29 @@ if(mysqli_num_rows($query) < 1){
         <input type="text" name="title" value="<?= $note_title ?>" disabled>
         <input type="text" name="notes" value="<?= $note ?>" disabled>
         </form>
+    </div>
+    <div class="container">
+    <?php
+    $total = mysqli_num_rows($queryTask);
+    if($total == 0){
+        echo '<p>No Task Available</p>';
+    } else{
+        if($total < 10){
+            $cnt = $total;
+        } else {
+            $cnt = 10;
+        }
+        for($i = 0; $i<$cnt; $i++){
+            $task = mysqli_fetch_assoc($queryTask);
+            if ($task['status'] == 1) {
+                $isitask = '<s>' . $task['task'] . '</s>';
+            } else {
+                $isitask = $task['task'];
+            }
+            echo '<p>'.$task['task'].'</p>';
+        }
+    }
+    ?>
     </div>
     
 
