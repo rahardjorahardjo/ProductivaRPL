@@ -42,7 +42,7 @@ $user_id = $_SESSION['user']['user_id'];
         <h1 class="break hide">Break Time!</h1>
       </div>
       <div class="PomodoroTimes" id="timer">
-        <span class="minutes">01</span>
+        <span class="minutes">25</span>
         <span>:</span>
         <span class="seconds">00</span>
       </div>

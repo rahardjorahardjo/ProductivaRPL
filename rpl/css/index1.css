@@ -165,6 +165,24 @@ html {
     border-radius: 10px;
 }
 
+.notecontent p{
+    font-weight: 500;
+    font-size: 19.2125px;
+    line-height: 23px;
+    display: flex;
+
+    text-align: justify;
+    margin-top: 0px;
+
+    margin-bottom: 0px;
+    padding-top: 10px;
+    color: #FFF4E0;   
+}
+
+.notecontent {
+    margin: 20px;
+}
+
 .containerNoteTask{
     display: flex;
     flex-direction: row;
