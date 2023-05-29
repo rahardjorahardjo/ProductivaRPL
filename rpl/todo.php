@@ -60,6 +60,7 @@ $cnt = mysqli_num_rows($q2);
     } else {
         $isitask = $tasks['task'];
     }
+    echo $isitask;
     ?>
 	            <tbody>
 	                <tr>

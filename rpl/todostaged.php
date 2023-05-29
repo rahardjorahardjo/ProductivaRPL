@@ -74,22 +74,19 @@ $cnt = mysqli_num_rows($q2);
                                 <?php
                                 $ta = mysqli_query($connection, "SELECT * FROM tasks WHERE category_id = '$catid' AND user_id = '$user_id'");
 
-                                while ($tasks = mysqli_fetch_assoc($ta)) {
+                                while ($tasks = mysqli_fetch_assoc($ta)):
                                     if ($tasks['status'] == 1) {
-                                        $isitask = '<s>' . $tasks['task'] . '</s>';
+                                        $isitask = '<p style="text-decoration: line-through;">' . $tasks['task'] . '</p>';
                                     } else {
-                                        $isitask = $tasks['task'];
+                                        $isitask = '<p>' . $tasks['task'] . '</p>';
                                     }
-                                    ?>
+                                ?>
                                     <div class="isi-list-box">
-                                        <input type="checkbox">
-                                        <p>
-                                            <?= $isitask ?>
-                                        </p>
+                                        <a href="doneTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;"><i class="fa-regular fa-square-check"></i></a>
+                                        <?=$isitask?>
                                         <a  href="deleteTask.php?task_id=<?= $tasks['task_id'] ?>" style="text-decoration: none; color:#FFBF9B;" <i class="fa-regular fa-trash-can"></i></a>
                                     </div>
-                                <?php } ?>
-
+                                <?php endwhile; ?>
                             </div>
                                 <div class="form-wrap" id="<?php echo $i ?>" style="display: none;">
                                     <form class="task-form" action="addTask.php?category_id=<?= $catid ?>" method="post">

@@ -246,7 +246,7 @@ html {
     padding-top: 5px;
     padding-bottom: 5px;
     flex-direction: row;
-    width: 230px;
+    width: 280px;
     height: 35px;
     background: #4D4D4D;
     border-radius: 9px;
@@ -262,7 +262,7 @@ html {
 .isi-list-box p {
     line-height: 18px;
     font-weight: 400;
-    width: 165px;
+    width: 180px;
     font-size: 18px;
     color: #FFF4E0;
     margin-left: 10px;
