@@ -80,6 +80,9 @@ mysqli_data_seek($queryTask, 0);
             </div>
             <div class="containerNoteTask">
                 <div class="notelist">
+                    <div class="judul-note">
+                        <h1>Quick Note</h1>
+                    </div>   
                     <h1>
                     <?= $notes['note_title'] ?>
                     </h1>

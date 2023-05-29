@@ -170,17 +170,18 @@ html {
     font-size: 19.2125px;
     line-height: 23px;
     display: flex;
-
     text-align: justify;
-    margin-top: 0px;
-
-    margin-bottom: 0px;
+    color: #FFF4E0; 
+    margin: 10px;  
     padding-top: 10px;
-    color: #FFF4E0;   
 }
 
 .notecontent {
+    background-color: #c37474;
     margin: 20px;
+    border-radius: 8px;
+    height: 150px;
+
 }
 
 .containerNoteTask{
@@ -202,7 +203,8 @@ html {
     align-items: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
-    background-color: #FFBF9B;
+    background-color: none;
+    color: white;
     font-size: 50px;
     border-radius: 8px;
     height: 80px;
@@ -214,7 +216,8 @@ html {
     align-items: center;
     display: flex;
     justify-content: center;
-    background-color: #FFBF9B;
+    background-color: none;
+    color: white;
     font-family: 'Inter', sans-serif;
     font-size: 50px;
     border-radius: 8px;
@@ -231,6 +234,8 @@ html {
     border-radius: 8px;
 
 }
+
+
 .Tasklist{
     width: 50%;
     background-color: #B46060;
@@ -239,6 +244,26 @@ html {
 }
 
 .container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.judul-note h1{
+    border-radius: 10px;
+    background-color: #FFBF9B;
+    margin-top: 5px;
+    transform: translateY(-60%);
+    width: 100px;
+    margin-bottom: -40px;
+    padding: 5px;
+    width: 30%;
+    text-align: center;
+
+}
+
+.judul-note{
     display: flex;
     align-items: center;
     flex-direction: column;
