@@ -18,5 +18,5 @@ if($check['status']==1){
 }else{
     mysqli_query($connection, "UPDATE tasks SET status='1' WHERE task_id = '$task_id'");
 }
-header("Location: todostaged.php");
+header("Location: tasklist.php");
 ?>

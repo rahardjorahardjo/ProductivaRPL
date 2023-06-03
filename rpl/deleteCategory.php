@@ -14,10 +14,10 @@ $category_id = $_GET['category_id'];
 $rowtasks = mysqli_query($connection, "SELECT * FROM tasks WHERE category_id = '$category_id'");
 if(mysqli_num_rows($rowtasks)>0){
     echo "<script>alert('Masih ada task dalam kategori ini!');
-                    document.location.href ='todostaged.php'</script>";
+                    document.location.href ='tasklist.php'</script>";
 }else if(mysqli_num_rows($rowtasks)== 0){
     mysqli_query($connection, "DELETE FROM categories WHERE category_id = '$category_id'");
-    header("Location: todostaged.php");
+    header("Location: tasklist.php");
 }
 
 ?>

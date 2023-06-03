@@ -37,9 +37,9 @@ $cnt = mysqli_num_rows($q2);
             </div>
             <h1>Productiva.</h1>
             <div class="features">
-                <li><a href="indexstaged.php">Home</a></li>
-                <li><a href="pomodorostage1.php">Podomoro</a></li>
-                <li><a href="todostaged.php">Task-List</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="pomodoro.php">Podomoro</a></li>
+                <li><a href="tasklist.php">Task-List</a></li>
             </div>
             <div class="logout">
                 <p class="icon"><i class="fa-solid fa-right-from-bracket"></i></p>
@@ -53,7 +53,7 @@ $cnt = mysqli_num_rows($q2);
             <div class="add-task">
                 <form action="addCategory.php" method="post" class="add-task-box">
                     <button><i class="fas fa-plus"></i></button>
-                    <input type="text" name="categoryname" placeholder="Add Task" required>
+                    <input type="text" name="categoryname" placeholder="Add Task Category" required>
                 </form>
             </div>
             <div class="task-list">

@@ -23,7 +23,7 @@ if(isset($_POST['signin'])){
             $_SESSION["user"] = $data;
             $_SESSION["login"] = true;
 
-            header("Location: indexstaged.php");
+            header("Location: index.php");
 
             exit; //keluar fungsi if
         }

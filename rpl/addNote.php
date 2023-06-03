@@ -13,6 +13,6 @@ $note = $_POST['note'];
 $user_id = $_SESSION['user']['user_id'];
 $datetime = date("Y-m-d H:i:s");
 mysqli_query($connection, "INSERT INTO notes VALUES ('','$user_id', '$note_title', '$note', '$datetime')");
-header("Location: pomodorostage1.php");
+header("Location: pomodoro.php");
 
 ?>

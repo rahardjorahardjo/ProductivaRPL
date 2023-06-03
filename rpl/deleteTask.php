@@ -11,5 +11,5 @@ include('config.php');
 //ambil task_id
 $task_id = $_GET['task_id'];
 mysqli_query($connection, "DELETE FROM tasks WHERE task_id = '$task_id'");
-header("Location: todostaged.php")
+header("Location: tasklist.php")
 ?>
