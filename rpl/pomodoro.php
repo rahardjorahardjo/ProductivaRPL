@@ -59,10 +59,7 @@ $user_id = $_SESSION['user']['user_id'];
   </div>
 
   <a href="" class="spotifyBox">
-    <iframe style="border-radius:12px"
-      src="https://open.spotify.com/embed/playlist/5OCJ7fSBz0uGfFOaSgWAYQ?utm_source=generator&theme=0" width="100%"
-      height="152" frameBorder="0" allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/68S2gjzWKOBSB0u4JQaaNE?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <!-- <h2 class="spotifyTexts">Connect to Spotify</h2>
       <img src="" alt="" srcset=""> -->
   </a>
